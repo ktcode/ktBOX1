@@ -60,23 +60,28 @@ difference(){
         cylinder( 1, 2, 2, center=true, $fn=30 );
         
         translate( [63.5, 0, 0] ){
-            translate( [-6-1, front_y-15-37.5-1, panel_thick] )
+            translate( [-7-1, front_y-15-37.5-1, panel_thick] )
             cube( [6, 4, 12.5] );
         }
         translate( [front_x, 0, 0] ){
-            translate( [-7.5, 0+(12.7-8)/2+7.5, panel_thick] )
+            translate( [-7.5, 0+(12.7-8)/2+7.6, panel_thick] )
             cube( [7.5, 5.2, 10] );
-            translate( [-7.5, 12.7+(12.7-8)/2+7.5, panel_thick] )
+            translate( [-7.5, 12.7+(12.7-8)/2+7.6, panel_thick] )
             cube( [7.5, 5.2, 10] );
-            translate( [-7.5, 12.7*2+(12.7-8)/2+7.5, panel_thick] )
+            translate( [-7.5, 12.7*2+(12.7-8)/2+7.6, panel_thick] )
             cube( [7.5, 5.2, 10] );
-            translate( [-7.5, 12.7*3+(12.7-8)/2+7.5, panel_thick] )
+            translate( [-7.5, 12.7*3+(12.7-8)/2+7.6, panel_thick] )
             cube( [7.5, 5.2, 10] );
-            translate( [-7.5, 12.7*4+(12.7-8)/2+7.5, panel_thick] )
+            translate( [-7.5, 12.7*4+(12.7-8)/2+7.6, panel_thick] )
             cube( [7.5, 5.2, 10] );
         }
         //}
     }
+    translate( [30/2, -gap1, front_z+panel_thick-10+gap1] )
+    cube( [front_x-30, panel_thick+gap2, 10] );
+    translate( [55, front_y-panel_thick-gap1, front_z+panel_thick-10+gap1] )
+    cube( [25, panel_thick+gap2, 10] );
+    
     board_hole( (front_x-board_hole_x)/2, (front_y-board_hole_y)/2, front_z+panel_thick-board_thick);
 
     lcd_window( 15, 28 );
@@ -97,72 +102,37 @@ difference(){
         translate( [-1.25, front_y-panel_thick/2+gap1, 13.5] )
         cube( [7.5, panel_thick+gap2*2, 5], center=true );
         translate( [20, front_y-10.5, panel_thick/2] ){
-            cube( [10+0.4, 6, panel_thick+gap2*2], center=true );
+            cube( [10+0.6, 6, panel_thick+gap2*2], center=true );
             translate( [0, 6/2, 0] )
             rotate( [-45, 0, 0] )
-            cube( [10+0.4, 6, panel_thick+gap2*2], center=true );
+            cube( [10+0.6, 6, panel_thick+gap2*2], center=true );
             translate( [0, -6/2, 0] )
             rotate( [45, 0, 0] )
-            cube( [10+0.4, 6, panel_thick+gap2*2], center=true );
+            cube( [10+0.6, 6, panel_thick+gap2*2], center=true );
         }
-        translate( [-6, front_y-15-37.5, 0.5] )
+        translate( [-7, front_y-15-37.5, 0.5] )
         cube( [4, 2, 15] );
     }
     
     translate( [front_x, 12.8, 0] ){
-        translate( [-7.5, 0+(12.7-8)/2, -gap1] ){
-            cube( [7.5, 7.5, panel_thick*2+gap2] );
-            difference(){
-            translate( [7.5/2+1.1, 7.5/2, 0] )
-            scale( [(7.5+6)/sqrt(2), (7.5+2.95)/sqrt(2), (7.5+2.5)/sqrt(2)] )
-            rotate( [0, 0, 45] )
-            cylinder( 1, 1, 0, $fn=4 );
-            translate( [7.5/2, 0, panel_thick] )
-            cube( [7.5, 7.5, 7.5] );
-            }
-        }
-        translate( [-7.5, 12.7+(12.7-8)/2, -gap1] ){
-            cube( [7.5, 7.5, panel_thick*2+gap2] );
-            difference(){
-            translate( [7.5/2+1.1, 7.5/2, 0] )
-            scale( [(7.5+6)/sqrt(2), (7.5+2.95)/sqrt(2), (7.5+2.5)/sqrt(2)] )
-            rotate( [0, 0, 45] )
-            cylinder( 1, 1, 0, $fn=4 );
-            translate( [7.5/2, 0, panel_thick] )
-            cube( [7.5, 7.5, 7.5] );
-            }
-        }
-        translate( [-7.5, 12.7*2+(12.7-8)/2, -gap1] ){
-            cube( [7.5, 7.5, panel_thick*2+gap2] );
-            difference(){
-            translate( [7.5/2+1.1, 7.5/2, 0] )
-            scale( [(7.5+6)/sqrt(2), (7.5+2.95)/sqrt(2), (7.5+2.5)/sqrt(2)] )
-            rotate( [0, 0, 45] )
-            cylinder( 1, 1, 0, $fn=4 );
-            translate( [7.5/2, 0, panel_thick] )
-            cube( [7.5, 7.5, 7.5] );
-            }
-        }
-        translate( [-7.5, 12.7*3+(12.7-8)/2, -gap1] ){
-            cube( [7.5, 7.5, panel_thick*2+gap2] );
-            difference(){
-            translate( [7.5/2+1.1, 7.5/2, 0] )
-            scale( [(7.5+6)/sqrt(2), (7.5+2.95)/sqrt(2), (7.5+2.5)/sqrt(2)] )
-            rotate( [0, 0, 45] )
-            cylinder( 1, 1, 0, $fn=4 );
-            translate( [7.5/2, 0, panel_thick] )
-            cube( [7.5, 7.5, 7.5] );
-            }
-        }
+        translate( [-8.5, 0+(12.7-8)/2, -gap1] )
+        cube( [6.5, 7.5, panel_thick*2+gap2] );
+        translate( [-8.5, 12.7+(12.7-8)/2, -gap1] )
+        cube( [6.5, 7.5, panel_thick*2+gap2] );
+        translate( [-8.5, 12.7*2+(12.7-8)/2, -gap1] )
+        cube( [6.5, 7.5, panel_thick*2+gap2] );
+        translate( [-8.5, 12.7*3+(12.7-8)/2, -gap1] )
+        cube( [6.5, 7.5, panel_thick*2+gap2] );
     }
     
+    /*
     translate( [-20, 0, 0] )
     #cube( [20, front_y, front_z+20] );
     translate( [0, 15, 0] )
     #cube( [9, front_y-30, front_z+20] );
     //translate( [front_x-2, 15, 0] )
     //#cube( [2, front_y-30, front_z+20] );
-    translate( [front_x+4, 0, 0] )
+    translate( [front_x, 0, 0] )
     #cube( [20, front_y, front_z+20] );
     translate( [15, 0, 0] )
     #cube( [front_x-30, 5, front_z+20] );
@@ -180,21 +150,23 @@ difference(){
     #cube( [20, 40, 5] );
     translate( [65, 10, 0] )
     #cube( [25, 45, 5] );
+    */
 }
 
-/*
+
 //translate( [front_x, 22.65, panel_thick] )
 //rotate( [-90, 0, 180] )
-translate( [0, -20, 0] )
+translate( [0, -30, 20] )
+rotate( [90, 0, 0] )
 button( 0, 0, 0 );
-*/
-/*
-//translate( [76.5, front_y-15+12.8, panel_thick+2] )
+
+
+//translate( [76.5, front_y-15+12.8, panel_thick+9.5] )
 //rotate( [180, 0, 0] )
 translate( [0, -20, 0] )
 sw( 0, 0, 0 );
-*/
-/*
+
+
 //translate( [0, front_y, front_z+rear_z+panel_thick*2] ){
 //    rotate( [180, 0, 0] ){
 translate( [0, 100, 0] ){
@@ -212,13 +184,10 @@ translate( [0, 100, 0] ){
                 hinge( -10, front_y/2-hinge_y/2, 0, rear_z );
                 //}
             }
-            translate( [30/2, front_y-panel_thick-gap1, panel_thick+3] )
-            cube( [front_x-30, panel_thick+gap2, rear_z] );
         }
     }
 }
 
-*/
 
 
 
@@ -384,12 +353,26 @@ module sw( x, y, z=0 ){
 
 
 module button( x, y, z=0 ){
+    rate = 0.88;
     translate( [x, y, z] ){
-        //color( "Black" )
-        union(){
-            cube( [7.5*0.97, panel_thick, 7.5*0.97] );
-            translate( [panel_thick, -22, 0] )
-            cube( [8.5*0.97, 22, 7.5*0.97] );
+        difference(){
+            //color( "Black" )
+            union(){
+                translate( [panel_thick, 0, 0] )
+                cube( [6.5*rate, panel_thick+2, 7.5*rate] );
+                translate( [panel_thick, -19, 0] )
+                cube( [8.5*rate, 19, 7.5*rate] );
+                translate( [panel_thick+((8.5*rate)/2-(7.5*rate)/2), -20, (7.5*rate)/2-(6.5*rate)/2] )
+                cube( [7.5*rate, 1, 6.5*rate] );
+            }
+            translate( [panel_thick, -17, -0.5] )
+            rotate( [0, 0, 45] )
+            cube( [4.2, 5, 7.5] );
+            translate( [panel_thick-gap1, -14, -0.5] )
+            cube( [3+gap1, 12, 7.5] );
+            translate( [panel_thick, -5, -0.5] )
+            rotate( [0, 0, 45] )
+            cube( [4.2, 5, 7.5] );
         }
     }
 }
